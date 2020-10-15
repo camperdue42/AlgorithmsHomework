@@ -19,7 +19,7 @@ def search(array, value):
 
 
 def main():
-    print(search([1, 2, 3, 6, 10], 11)
+    print(search([1, 2, 3, 6, 10], 11))
 
 
 if __name__ == "__main__":
