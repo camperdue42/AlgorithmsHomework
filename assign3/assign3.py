@@ -43,9 +43,15 @@ def partition(array, l, h):
     return i+1
 
 
-def quicksort(a):
-    return 0
+def quicksort_recursive(a):
+    quicksort_recursive_helper(a, 0, len(a) - 1)
 
+
+def quicksort_recursive_helper(a, l, h):
+    if l < h:
+        m = partition(a, l, h)
+        quicksort_recursive_helper(a, l, m-1)
+        quicksort_recursive_helper(a, m+1, h)
 
 
 def main():
