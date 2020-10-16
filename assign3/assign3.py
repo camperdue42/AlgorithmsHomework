@@ -31,6 +31,11 @@ def sorted_has_sum(S, x):
     return result
 
 
+def has_sum(S, x):
+    sorted_s = quicksort_iterative(S)
+    return sorted_has_sum(sorted_s, x)
+
+
 def partition(array, l, h):
     x = array[h]
     i = l - 1
@@ -54,10 +59,46 @@ def quicksort_recursive_helper(a, l, h):
         quicksort_recursive_helper(a, m+1, h)
 
 
+def quicksort_iterative(a):
+    l = 0
+    h = len(a) - 1
+    stack = [None] * ((h - l) + 1)
+    top = 0
+
+    stack[top] = l
+    top += 1
+    stack[top] = h
+
+    while top >= 0:
+        h = stack[top]
+        top -= 1
+        l = stack[top]
+        top -= 1
+
+        m = partition(a, l, h)
+
+        if m - 1 > l:
+            top += 1
+            stack[top] = l
+            top += 1
+            stack[top] = m - 1
+
+        if m + 1 < h:
+            top += 1
+            stack[top] = m + 1
+            top += 1
+            stack[top] = h
+
+    return a
+
+
 def main():
-    print(search([1, 2, 3, 6, 10], 11))
-    print(sorted_has_sum([1, 2, 5], 6))
+#     print(search([1, 2, 3, 6, 10], 11))
+#     print(sorted_has_sum([1, 2, 5], 6))
+#     print(quicksort_iterative([10, 5, 1, 7, 8, 2, 10]))
+#     print(has_sum([1, 2, 5], 10)) this is what is meant by okay to use one number in S twice I'm assuming (?)
+# print(has_sum([1, 2, 5], 11))
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
