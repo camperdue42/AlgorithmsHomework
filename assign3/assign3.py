@@ -93,12 +93,13 @@ def quicksort_iterative(a):
 
 
 def main():
+    print(0)
 #     print(search([1, 2, 3, 6, 10], 11))
 #     print(sorted_has_sum([1, 2, 5], 6))
 #     print(quicksort_iterative([10, 5, 1, 7, 8, 2, 10]))
-#     print(has_sum([1, 2, 5], 10)) this is what is meant by okay to use one number in S twice I'm assuming (?)
-# print(has_sum([1, 2, 5], 11))
+#    print(has_sum([1, 2, 5], 10)) this is what is meant by okay to use one number in S twice I'm
+#    print(has_sum([1, 2, 5], 11))
 
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
